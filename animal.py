@@ -20,6 +20,5 @@ class Animal:
 
     def should_die(self):
         chance_of_dying = self.age / self.life_expectancy
-        num = random.random(0, 1)
-        if num < chance_of_dying:
+        if random() < chance_of_dying:
             self.alive = False
