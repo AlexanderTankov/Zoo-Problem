@@ -28,7 +28,7 @@ class Animal_test(unittest.TestCase):
     def test_should_die(self):
         flag_die = False
         flag_alive = False
-        for i in range(0, 10):
+        for i in range(0, 100):
             self.my_animal.should_die()
             if not self.my_animal.alive:
                 flag_die = True
