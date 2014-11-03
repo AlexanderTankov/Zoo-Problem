@@ -2,6 +2,7 @@ import unittest
 
 from animal import Animal
 
+
 class Animal_test(unittest.TestCase):
 
     def setUp(self):
