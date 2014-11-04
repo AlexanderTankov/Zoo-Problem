@@ -23,7 +23,7 @@ class Zoo:
 
     def death(self, animal):
         animal.should_die()
-        if not self.anima.is_alive:
-                self.animals.remove(animal)
-                print("{} died.".format(animal.name))
+        if not animal.is_alive:
+            self.animals.remove(animal)
+            print("{} died.".format(animal.name))
     return self.animals
