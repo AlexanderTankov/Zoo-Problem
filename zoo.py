@@ -22,5 +22,8 @@ class Zoo:
         return income
 
     def death(self, animal):
-        if not animal.should_die():
-            self.animals.remove(animal)
+        animal.should_die()
+        if not self.anima.is_alive:
+                self.animals.remove(animal)
+                print("{} died.".format(animal.name))
+    return self.animals
