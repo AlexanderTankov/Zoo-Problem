@@ -10,5 +10,8 @@ class Zoo_test(unittest.TestCase):
         self.my_animal = Animal("bear", 5, "puh", "m", 150, 10)
         self.my_zoo = Zoo()
 
+    def test_init(self):
+
+
 if __name__ == '__main__':
     unittest.main()
