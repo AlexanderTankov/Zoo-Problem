@@ -1,10 +1,10 @@
-class Zoo:
+class Zoo():
     INCOME_FROM_ANIMAL = 60
-    MEAT = 4
-    BAMBOO = 2
+    MEAT = ['meat']
+    GREENS = ['bamboo', 'foliage', 'grass']
+    animals = []
 
-    def __init_(self, animals, capacity, budged):
-        self.animals = []
+    def __init__(self, capacity, budged):
         self.capacity = capacity
         self.budged = budged
 
@@ -20,6 +20,16 @@ class Zoo:
         income = self.INCOME_FROM_ANIMAL * len(self.animals)
         self.budged += income
         return income
+
+    def daily_outcome(self):
+        total = 0
+        for animal in animals:
+            if animal.type_food in GREENS:
+                total += 2
+            if animal.type_food in MEAT:
+                total += 4
+        self.budged -= total
+        return total
 
     def death(self, animal):
         animal.should_die()

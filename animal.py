@@ -1,8 +1,8 @@
 from random import random
 
 
-class Animal:
-    def __init__(self, species, age, name, gender, weight, life_expectancy):
+class Animal():
+    def __init__(self, species, age, name, gender, weight, life_expectancy, type_food):
         self.species = species
         self.age = age
         self.name = name
@@ -10,6 +10,7 @@ class Animal:
         self.weight = weight
         self.alive = True
         self.life_expectancy = life_expectancy
+        self.type_food = type_food
 
     def grow(self):
         self.age += 1
