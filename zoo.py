@@ -1,12 +1,13 @@
 class Zoo():
+
     INCOME_FROM_ANIMAL = 60
     MEAT = ['meat']
     GREENS = ['bamboo', 'foliage', 'grass']
-    animals = []
 
     def __init__(self, capacity, budged):
         self.capacity = capacity
         self.budged = budged
+        self.animals = []
 
     def add_new_animal(self, new_animal):
         if self.capacity == len(self.animals):
