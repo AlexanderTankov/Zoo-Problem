@@ -1,4 +1,6 @@
 import random
+from animal import Animal
+
 
 class Zoo():
 
@@ -51,9 +53,11 @@ class Zoo():
         return male.name + female.name
 
     def get_baby_gender(self):
-        pass
+        if random() > 0.5:
+            return "m"
+        return "f"
 
     def born_animal(self, male, female):
-        if can_concatenate(male, female):
-            animal_baby = Animal(male.species, 0, concatenate_names(male, female), get_baby_gender(), self.NEW_BORN_BABY_WEIGHT, male.life_expectancy, male.food_type)
+        if self.can_concatenate(male, female):
+            animal_baby = Animal(male.species, 0, self.concatenate_names(male, female), self.get_baby_gender(), self.NEW_BORN_BABY_WEIGHT, male.life_expectancy, male.food_type)
             self.animals.append(animal_baby)
