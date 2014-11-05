@@ -1,7 +1,10 @@
+import random
+
 class Zoo():
 
     INCOME_FROM_ANIMAL = 60
     FOOD_KIND = {"carnivore": 4, "herbivore": 2}
+    NEW_BORN_BABY_WEIGHT = 3
 
     def __init__(self, capacity, budged):
         self.capacity = capacity
@@ -33,3 +36,11 @@ class Zoo():
         animal.should_die()
         if not animal.is_alive:
             self.animals.remove(animal)
+
+    def get_baby_gender(self):
+        pass
+
+    def born_animal(self, male, female):
+        if can_concatenate(male, female):
+            animal_baby = Animal(male.species, 0, concatenate_names(male, female), get_baby_gender(), self.NEW_BORN_BABY_WEIGHT, male.life_expectancy, male.food_type)
+            self.animals.append(animal_baby)
