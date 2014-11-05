@@ -33,3 +33,16 @@ class Zoo():
         animal.should_die()
         if not animal.is_alive:
             self.animals.remove(animal)
+
+    def get_same_type_animals(self, animal):
+        one_kind = []
+        for couple in self.animals:
+            if couple.species == animal.species:
+                one_kind.append(couple)
+        return one_kind
+
+    def can_cocatenate(self, male, female):
+        return (female in self.get_same_type_animals(male))
+
+    def concatenate_names(self, male, female):
+        return male.name + female.name
