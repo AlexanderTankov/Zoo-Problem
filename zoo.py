@@ -59,5 +59,8 @@ class Zoo():
 
     def born_animal(self, male, female):
         if self.can_concatenate(male, female):
-            animal_baby = Animal(male.species, 0, self.concatenate_names(male, female), self.get_baby_gender(), self.NEW_BORN_BABY_WEIGHT, male.life_expectancy, male.food_type)
+            animal_baby = Animal(male.species, 0, self.concatenate_names(male, female),
+                                 self.get_baby_gender(), self.NEW_BORN_BABY_WEIGHT,
+                                 male.life_expectancy, male.food_type, 0, self.NEW_BORN_BABY_WEIGHT,
+                                 self.NEW_BORN_BABY_WEIGHT, 1, 2)
             self.animals.append(animal_baby)
