@@ -57,13 +57,14 @@ class Zoo():
         total = 0
         for animal in self.animals:
             if animal.food_type in self.FOOD_KIND:
-                total += self.FOOD_KIND[animal.food_type]
+                total += self.FOOD_KIND[animal.food_type] * animal.food_weight_ratio
         self.budged -= total
 
     def death(self, animal):
-        animal.should_die()
-        if not animal.is_alive:
-            self.animals.remove(animal)
+        if animal in self.animals:
+            animal.should_die()
+            if not animal.alive:
+                self.animals.remove(animal)
 
     def get_same_type_animals(self, animal):
         one_kind = []
