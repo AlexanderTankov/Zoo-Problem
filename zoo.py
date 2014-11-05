@@ -74,13 +74,15 @@ class Zoo():
         return one_kind
 
     def can_cocatenate(self, male, female):
-        return (female in self.get_same_type_animals(male))
+        if male.gender == "m" and female.gender == "f":
+            return (female in self.get_same_type_animals(male))
 
     def concatenate_names(self, male, female):
-        return male.name + female.name
+        if male.gender == "m" and female.gender == "f":
+            return male.name + female.name
 
     def get_baby_gender(self):
-        if random() > 0.5:
+        if random.random() > 0.5:
             return "m"
         return "f"
 
@@ -91,7 +93,7 @@ class Zoo():
             return female.gestation_period
 
     def born_animal(self, male, female):
-        if self.can_concatenate(male, female):
+        if self.can_cocatenate(male, female):
             baby_gender = self.get_baby_gender()
             baby_gestation = self.get_baby_gestation(baby_gender, female)
             animal_baby = Animal(male.species, 0, self.concatenate_names(male, female),
