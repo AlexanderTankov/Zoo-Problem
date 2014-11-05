@@ -1,4 +1,4 @@
-{"Zoo":[
+{"capacity":60, "budged":1000, "animals":[
     {"species":"tiger", "age":"10","name":"Pesho", "gender":"m","weight":100, "life_expectancy":15,"food_type":"carnivore","gestation_period":0, "newborn_weight":1,"average_weight":200,"food_weight_ratio":5,"weight_age_ratio":2},
     {"species":"tiger", "age":"2","name":"Kira", "gender":"f","weight":50, "life_expectancy":15,"food_type":"carnivore","gestation_period":6, "newborn_weight":1,"average_weight":180,"food_weight_ratio":5,"weight_age_ratio":2},
     {"species":"panda", "age":"2","name":"Puh", "gender":"m","weight":70, "life_expectancy":15,"food_type":"herbivore","gestation_period":0, "newborn_weight":1,"average_weight":200,"food_weight_ratio":5,"weight_age_ratio":2}
