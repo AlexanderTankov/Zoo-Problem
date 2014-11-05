@@ -57,10 +57,18 @@ class Zoo():
             return "m"
         return "f"
 
+    def get_baby_gestation(self, baby_gender, female):
+        if baby_gender == "m":
+            return 0
+        else:
+            return female.gestation_period
+
     def born_animal(self, male, female):
         if self.can_concatenate(male, female):
+            baby_gender = self.get_baby_gender()
+            baby_gestation = self.get_baby_gestation(baby_gender, female)
             animal_baby = Animal(male.species, 0, self.concatenate_names(male, female),
-                                 self.get_baby_gender(), self.NEW_BORN_BABY_WEIGHT,
-                                 male.life_expectancy, male.food_type, 0, self.NEW_BORN_BABY_WEIGHT,
-                                 self.NEW_BORN_BABY_WEIGHT, 1, 2)
+                                 baby_gender, self.NEW_BORN_BABY_WEIGHT,
+                                 male.life_expectancy, male.food_type, baby_gestation,
+                                 self.NEW_BORN_BABY_WEIGHT, self.NEW_BORN_BABY_WEIGHT, 1, 2)
             self.animals.append(animal_baby)
