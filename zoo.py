@@ -12,7 +12,9 @@ class Zoo():
         if self.capacity == len(self.animals):
             raise ValueError("The zoo is full")
         for animal in self.animals:
-            if animal.species == new_animal.species and animal.name == new_animal.name:
+            is_names_equal = animal.name == new_animal.name
+            is_species_equal = animal.species == new_animal.species
+            if is_species_equal and is_names_equal:
                 raise ValueError("Choose another name for the new animal")
         self.animals.append(new_animal)
 
