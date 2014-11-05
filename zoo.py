@@ -1,4 +1,5 @@
 import random
+import json
 from animal import Animal
 
 
@@ -7,6 +8,31 @@ class Zoo():
     INCOME_FROM_ANIMAL = 60
     FOOD_KIND = {"carnivore": 4, "herbivore": 2}
     NEW_BORN_BABY_WEIGHT = 3
+
+    @staticmethod
+    def load(file_name):
+        my_file = open(file_name, 'r')
+        my_zoo = json.load(my_file)
+        my_file.close()
+        result = Zoo(my_zoo["capacity"], "budged")
+        animals_arr = my_zoo["animals"]
+        for animals in animals_arr:
+            temp_animal = Animal(
+                my_zoo["species"],
+                my_zoo["age"],
+                my_zoo["name"],
+                my_zoo["gender"],
+                my_zoo["weight"],
+                my_zoo["life_expectancy"],
+                my_zoo["food_type"],
+                my_zoo["gestation_period"],
+                my_zoo["newborn_weight"],
+                my_zoo["average_weight"],
+                my_zoo["food_weight_ratio"],
+                my_zoo["weight_age_ratio"]
+                )
+            result.animals.append(temp_animal)
+        return result
 
     def __init__(self, capacity, budged):
         self.capacity = capacity
